@@ -14,6 +14,6 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
         errors:[{message:'Something went wrong'}]
     })
 
-
+    return
 }
 
