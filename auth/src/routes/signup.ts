@@ -14,7 +14,7 @@ router.post("/api/users/signup", [
         .trim()
         .isLength({ min: 4, max: 20 })
         .withMessage('Password must be within 4 and 20 characters')
-], async(req: Request, res: Response) => {
+], async (req: Request, res: Response) => {
 
     const errors = validationResult(req)
 
@@ -22,18 +22,18 @@ router.post("/api/users/signup", [
         throw new RequestValidationError(errors.array())
     }
 
-    const {email,password} =req.body
+    const { email, password } = req.body
 
-    const existingUser = await User.findOne({email})
-    
-    if(existingUser){
-        
+    const existingUser = await User.findOne({ email })
+
+    if (existingUser) {
+
         throw new BadRequestError("Email already in use")
-        
+
     }
 
     const user = User.build({
-        email,password
+        email, password
     })
 
     await user.save()
