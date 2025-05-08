@@ -10,4 +10,4 @@ it("returns a 201 on successfull signup", async () => {
         password: "password"
       })
       .expect(201);
-  });  // Add timeout parameter for this specific test
+  },30000);  // Add timeout parameter for this specific test

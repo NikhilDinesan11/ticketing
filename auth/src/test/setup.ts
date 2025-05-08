@@ -7,7 +7,9 @@ let mongo: any;  // Declare outside the function but don't initialize here
 
 beforeAll(async () => {
  
+  // Make sure JWT_KEY is set before any tests run
   process.env.JWT_KEY = 'asdf';
+
   mongo = await MongoMemoryServer.create();
   const mongoUri = mongo.getUri();
 

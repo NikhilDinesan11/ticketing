@@ -7,13 +7,13 @@
     "test": "jest --watchAll --no-cache"
   },
   "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "setUpFilesAfterEnv": [
-      "./src/test/setup.ts"
-    ],
-    "testTimeout": 60000
-  },
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "setupFilesAfterEnv": [
+    "./src/test/setup.ts"
+  ],
+  "testTimeout": 60000
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
